@@ -233,7 +233,75 @@ const cadena_a_numero = (cadena) =>{
 // Salida: 123
 
 // 18. Crear un arreglo con los múltiplos de un número
+const multiplos = (numero,limite)=>{
+    let resultado = []
+    // for(let i=1;i<limite +1;i++){
+    //     resultado.push(numero*i);
+    //     // console.log(i)
+    // }
+    // return resultado
 
+    //while
+    let i=1;
+    while (i <= limite){
+        resultado.push(numero*i);
+        i++
+    }
+    return resultado
+}
 // Entrada: 3, 5
-
+// console.log(multiplos(3,5))
 // Salida: [3, 6, 9, 12, 15]
+
+// 19. Contar las vocales en una cadena
+const contar_vocales = (cadena)=>{
+    // const vocales = ["a","e","i","o","u"];
+    // const arrayPalabra = cadena.toLowerCase().split('');
+    let resultado=0
+
+    // arrayPalabra.forEach(element => {
+    //     if(vocales.includes(element)){
+    //         resultado+=1
+    //     }
+    // });
+    // for (let i=0;i<arrayPalabra.length;i++){
+    //     if(vocales.includes(arrayPalabra[i])){
+    //         resultado+=1
+    //     }
+    // }
+
+
+    return resultado
+}
+
+// Entrada: "javascript"
+// console.log(contar_vocales("javascript"))
+// Salida: 3
+
+//objetos
+
+const objetos = (objeto) =>{
+    // console.log(objeto[1].name)
+    
+  const resultado = {}
+  objeto.forEach(element => {
+    if (!resultado[element.category]) {
+        resultado[element.category]={}
+    }
+    if (resultado[element.category][element.name]) {
+        resultado[element.category][element.name] += element.quantity;
+    } 
+    else {
+        resultado[element.category][element.name] = element.quantity;
+    }
+  });
+  return resultado;
+};
+
+console.log(objetos([
+    { name: 'doll', quantity: 5, category: 'toys' },
+    { name: 'car', quantity: 3, category: 'toys' },
+    { name: 'ball', quantity: 2, category: 'sports' },
+    { name: 'car', quantity: 2, category: 'toys' },
+    { name: 'racket', quantity: 4, category: 'sports' }
+  ]))
