@@ -281,8 +281,6 @@ const contar_vocales = (cadena)=>{
 //objetos
 
 const objetos = (objeto) =>{
-    // console.log(objeto[1].name)
-    
   const resultado = {}
   objeto.forEach(element => {
     if (!resultado[element.category]) {
@@ -298,10 +296,123 @@ const objetos = (objeto) =>{
   return resultado;
 };
 
-console.log(objetos([
-    { name: 'doll', quantity: 5, category: 'toys' },
-    { name: 'car', quantity: 3, category: 'toys' },
-    { name: 'ball', quantity: 2, category: 'sports' },
-    { name: 'car', quantity: 2, category: 'toys' },
-    { name: 'racket', quantity: 4, category: 'sports' }
-  ]))
+// console.log(objetos([
+//     { name: 'doll', quantity: 5, category: 'toys' },
+//     { name: 'car', quantity: 3, category: 'toys' },
+//     { name: 'ball', quantity: 2, category: 'sports' },
+//     { name: 'car', quantity: 2, category: 'toys' },
+//     { name: 'racket', quantity: 4, category: 'sports' }
+//   ]))
+
+// 20. Filtrar los números pares de un arreglo
+const numerosPares = (array) =>{
+    let numPares = []
+    array.forEach(element => {
+        if (element %2 === 0){
+            numPares.push(element)
+        }
+    });
+    return numPares
+}
+// Entrada: [1, 2, 3, 4, 5, 6]
+// console.log(numerosPares([1, 2, 3, 4, 5, 6]))
+// Salida: [2, 4, 6]
+
+// 22. Obtener los elementos comunes entre dos arreglos
+const elementosComunes = (array1,array2) =>{
+    const comunes=[]
+    for(let val1 of array1){
+        for (let val2 of array2){
+            if (val1 === val2){
+                comunes.push(val1)
+            }
+        }
+    }
+    const comunesFilter = array1.filter(element=>array2.includes(element))
+    return comunesFilter
+}
+// Entrada: [1, 2, 3, 4], [3, 4, 5, 6]
+// console.log(elementosComunes([1, 2, 3, 4], [3, 4, 5, 6]))
+// Salida: [3, 4]
+
+// 23. Contar cuántas veces aparece un carácter en una cadena
+const contarVeces = (cadena,letra) =>{
+    const arrayCadena = cadena.toLowerCase().split('');
+    const filtraLetra = arrayCadena.filter(element => element === letra)
+    console.log(filtraLetra)
+
+    return 0
+}
+// Entrada: "banana", "a"
+// console.log(contarVeces("banana", "a"))
+// Salida: 3
+
+// 27. Crear un arreglo con los primeros n números de Fibonacci
+const fibonacciSerie = (number) =>{
+    const inicio = [0,1]
+    for(let i=2;i<number;i++){
+        inicio[i] = inicio[i-1]+inicio[i-2]
+    }
+
+    return inicio
+}
+
+// Entrada: 5
+// console.log(fibonacciSerie(5))
+// // Salida: [0, 1, 1, 2, 3]
+
+// 29. Revertir el orden de los elementos en un arreglo
+const revertirArreglo = (array) =>{
+    const result = array.sort((a,b) => b-a)
+    const result2 = array.reverse()
+    return result
+}
+// Entrada: [1, 2, 3, 4]
+// console.log(revertirArreglo([1,2,3,4]))
+// Salida: [4, 3, 2, 1]
+
+// 33. Crear un arreglo con los divisores de un número
+const divisores = (numero) =>{
+    let resultado=[]
+    for(let i=0;i<numero+1;i++){
+        if(numero % i === 0){
+            resultado.push(i)
+        }
+    }
+    return resultado
+}
+
+// Entrada: 6
+// console.log(divisores(6))
+// Salida: [1, 2, 3, 6]
+
+// 37. Encontrar el valor máximo en un objeto con claves numéricas
+const valorMaxObject = (object) =>{
+    let maximo = 0
+    Object.values(object).forEach(element=>{
+        // console.log(element)
+        if(element>maximo){
+            console.log(maximo)
+            maximo=element
+        }
+    })
+    return maximo
+} 
+// Entrada: {1: 5, 2: 10, 3: 2}
+// console.log(valorMaxObject({1: 5, 2: 11 ,3: 20}))
+// Salida: 10
+
+// 41. Obtener la longitud de la palabra más larga en un arreglo
+const logPalabra = (array) =>{
+    const maximo = 0
+    for(let i=0;i<array.length;i++){
+        console.log(array[i])
+        if(array[i].length > maximo){
+            maximo=array[i].length
+        }
+    }
+    return maximo
+}
+// Entrada: ["apple", "banana", "kiwi"]
+console.log(logPalabra(["apple", "banana", "kiwi"]))
+// Salida: 6
