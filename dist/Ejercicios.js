@@ -414,5 +414,152 @@ const logPalabra = (array) =>{
     return maximo
 }
 // Entrada: ["apple", "banana", "kiwi"]
-console.log(logPalabra(["apple", "banana", "kiwi"]))
+// console.log(logPalabra(["apple", "banana", "kiwi"]))
 // Salida: 6
+
+
+
+// Las claves del objeto serán las categorías de juguetes.
+// Los valores serán objetos que tienen como claves los nombres de los juguetes y como valores las cantidades totales de cada juguete en esa categoría.
+// Si hay juguetes con el mismo nombre en la misma categoría, debes sumar sus cantidades.
+// Si el array está vacío, la función debe devolver un objeto vacío {}.
+
+const organizeInventory = (inventory) =>{
+    const resultado ={}
+    
+    const resultado2 ={}
+    inventory.forEach(element => {
+        if (!resultado[element.category]) {
+            resultado[element.category]={}
+            
+            resultado2[element.category]={}
+        }
+        if(!resultado[element.category][element.name]){
+            resultado[element.category]=1;
+            resultado2[element.category][element.quantity]=2
+        }
+        
+    });
+    return { resultado, resultado2 };
+}
+
+const inventory = [
+{ name: 'doll', quantity: 5, category: 'toys' },
+{ name: 'car', quantity: 3, category: 'toys' },
+{ name: 'ball', quantity: 2, category: 'sports' },
+{ name: 'car', quantity: 2, category: 'toys' },
+{ name: 'racket', quantity: 4, category: 'sports' }
+]
+// console.log(organizeInventory(inventory))
+
+
+const emparejamiento = (shoes) =>{
+    let lista_shoes =[]
+    shoes.forEach(element => {
+        
+    });
+    return lista_shoes
+}
+
+
+const shoes = [
+    { type: 'I', size: 38 },
+    { type: 'R', size: 38 },
+    { type: 'R', size: 42 },
+    { type: 'I', size: 41 },
+    { type: 'I', size: 42 }
+  ]
+
+// console.log(emparejamiento(shoes))
+
+
+
+//mas ejerciciso "
+// 8. Eliminar duplicados en un arreglo
+
+const eliminarDuplicados = (array) =>{
+    const resultado = new Set(array)
+    return resultado
+}
+
+// console.log(eliminarDuplicados([1, 2, 2, 3, 4, 4, 5]))
+
+// 9. Encontrar la longitud de la palabra más larga en un arreglo
+const longitudMasLarga = (array) =>{
+    let resultado = 0
+    array.forEach(element => {
+        resultado=Math.max(resultado,element.length)
+    });
+    return resultado
+} 
+
+// console.log(longitudMasLarga(["perro", "gato", "elefante"]))
+
+
+// Contar la frecuencia de cada elemento en un arreglo
+
+//     Entrada: [1, 2, 2, 3, 3, 3]
+//     Salida: {1: 1, 2: 2, 3: 3}
+const contarFrecuencia = (array) =>{
+    let dic = {}
+    for(let dato of array){
+      if(dic[dato]){
+        dic[dato]+=1
+      }
+      else{
+        dic[dato]=1
+      }
+    }
+    return dic;
+  }
+//   console.log(contarFrecuencia([1, 2, 2, 3, 3, 3]))
+
+// Rotar un arreglo hacia la derecha por k posiciones
+
+
+
+//     Entrada: ([1, 2, 3, 4, 5], 2)
+// console.log(rotarDerecha([1, 2, 3, 4, 5], 2))
+//     Salida: [4, 5, 1, 2, 3]
+
+// Invertir Palabras en una Cadena
+const invertirPalabra = (cadena) =>{
+    const separar = cadena.split(" ")
+    let resultado = separar[0] + separar[1]
+    return resultado
+}
+
+// console.log(invertirPalabra("hola mundo"))
+//     Entrada: "hola mundo"
+//     Salida: "mundo hola"
+
+
+const contar = (cadena) =>{
+    const arrayCadena = cadena.split(" ")
+    let resultado={}
+    for(let valor of arrayCadena){
+        if(resultado[valor]){
+            resultado[valor]+=1
+        }
+        else{
+            resultado[valor]=1
+        }
+    }
+    return resultado
+}
+
+// // console.log(contar("el sol brilla el sol"))
+
+// Ordenar una lista de objetos por una propiedad
+const ordenar = (array,propiedad) =>{
+    console.log(array[propiedad])
+    const ordenar = array.sort((a,b)=>{
+        if(a[propiedad]<b[propiedad]){
+            console.log(a[propiedad])
+        }
+    })
+    return 0
+}
+//  . Ejemplo: [{name: "Juan", age: 28}, {name: "Ana", age: 22}], propiedad: "age"
+//      [{name: "Ana", age: 22}, {name: "Juan", age: 28}]
+console.log(ordenar([{name: "Juan", age: 28}, {name: "Ana", age: 22}],"age"))
