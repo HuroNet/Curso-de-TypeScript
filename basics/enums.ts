@@ -1,6 +1,6 @@
 enum Color {
-    Rojo,
-    Verde,
+    Rojo="nomal",
+    Verde=8,
     Azul
 }
 
