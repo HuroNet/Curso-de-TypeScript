@@ -5,4 +5,4 @@ enum Color {
 }
 
 let colorFavorito: Color = Color.Rojo;
-console.log(colorFavorito); // 0
+console.log(colorFavorito); // noma
