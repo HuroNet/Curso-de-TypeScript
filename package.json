@@ -14,6 +14,7 @@
     "start:namespaces2": "tsc advance/namespaces/namespaces.ts  advance/namespaces/index.ts --outFile dist/namespaces2.js && node dist/namespaces2.js",
     
     "start:modules": "tsc advance/modules/index.ts --outdir dist/modules.js && node dist/modules.js",
+    "start:generics": "tsc advance/generics.ts --outdir dist/ && node dist/generics.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
